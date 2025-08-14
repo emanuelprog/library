@@ -210,5 +210,9 @@ Para rodar os testes do backend:
 ```bash
 mvn test
 ```
+Para rodar os testes do frontend:
+```bash
+npx vitest
+```
 
 ---
