@@ -40,7 +40,7 @@
 
           <q-card-section>
             <div class="row q-col-gutter-md">
-              <q-input v-model="form.name" label="* Descrição" filled :error="validate && !form.name"
+              <q-input v-model="form.name" label="* Nome" filled :error="validate && !form.name"
                 error-message="Campo obrigatório" class="col-12" />
             </div>
           </q-card-section>
