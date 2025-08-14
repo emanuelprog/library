@@ -142,10 +142,16 @@ library/
 │
 ├── library-frontend/
 │   ├── src/
-│   │   ├── pages
+│   │   ├── boot
 │   │   ├── components
-│   │   ├── stores
-│   │   └── services
+│   │   ├── css
+│   │   ├── layouts
+│   │   ├── pages
+│   │   ├── router
+│   │   ├── services
+│   │   └── stores
+│   │   └── tests
+│   │   └── types
 │   ├── public/
 │   └── package.json
 │
