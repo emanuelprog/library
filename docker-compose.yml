@@ -5,7 +5,7 @@ services:
     build: ./library-backend/docker/postgres
     image: library-postgres:16
     container_name: library-postgres
-    env_file: ./library-backend/.env
+    env_file: ./library-backend/.env.docker
     ports:
       - "15432:5432"
     volumes:
@@ -24,7 +24,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    env_file: ./library-backend/.env
+    env_file: ./library-backend/.env.docker
     ports:
       - "5050:80"
     volumes:
@@ -38,7 +38,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    env_file: ./library-backend/.env
+    env_file: ./library-backend/.env.docker
     ports:
       - "8080:8080"
     networks:
@@ -47,7 +47,7 @@ services:
   frontend:
     build: ./library-frontend
     container_name: library-frontend
-    env_file: ./library-frontend/.env
+    env_file: ./library-frontend/.env.docker
     ports:
       - "9000:80"
     depends_on:

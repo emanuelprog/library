@@ -1,4 +1,4 @@
-# 📚 Library System
+# 📚 Library
 
 Sistema completo para gerenciamento de Gêneros, Autores e Livros, composto por **API REST** (backend) e **aplicação web** (frontend), com autenticação JWT, documentação Swagger e execução simplificada via **Docker Compose**.
 
@@ -101,8 +101,8 @@ VITE_API_BASE_URL=/v1
 
 1. Clone o repositório e acesse a pasta:
    ```bash
-   git clone https://github.com/seu-usuario/library-system.git
-   cd library-system
+   git clone https://github.com/seu-usuario/library.git
+   cd library
    ```
 
 2. Ajuste os arquivos `.env` do **backend** e do **frontend** conforme necessário.
@@ -123,7 +123,7 @@ VITE_API_BASE_URL=/v1
 ## 📂 Estrutura do Projeto
 
 ```
-library-system/
+library/
 ├── library-backend/
 │   ├── src/main/java/com/challenge/library
 │   │   ├── config
@@ -216,3 +216,33 @@ npx vitest
 ```
 
 ---
+
+## 🚀 Executando em Ambiente de Desenvolvimento (sem Docker)
+
+Se você quiser rodar **backend** e **frontend** separados, siga os passos abaixo.
+
+---
+
+### 🔹 Backend (`library-backend`)
+**Pré-requisitos:** Java JDK 21, Maven 3.9+, PostgreSQL rodando localmente (banco `library_db` e usuário `app_user` configurados)
+
+**Passos:**
+1. Abra o IntelliJ IDEA  
+2. Vá em **Run/Debug Configurations**  
+3. Selecione a configuração do Spring Boot (`LibraryApplication`)  
+4. Habilite o carregamento do arquivo `.env.development` (caso utilize o plugin [EnvFile](https://plugins.jetbrains.com/plugin/7861-envfile))  
+5. Salve e execute 
+6. Acesse no navegador: `http://localhost:8080/v1` 
+
+## 🚀 Executando o Frontend em Ambiente de Desenvolvimento
+
+Pré-requisitos: Node.js 18+, npm (ou yarn), Quasar CLI
+
+1. Acesse a pasta do frontend: `cd library-frontend`  
+2. Instale as dependências: `npm install`  
+3. Configure a API base criando o arquivo `.env.development` com o conteúdo: `VITE_API_BASE_URL=http://localhost:8080/v1`  
+4. Inicie o servidor de desenvolvimento: `npm run dev`  
+5. Acesse no navegador: `http://localhost:9000`
+
+💡 Observação: Durante o desenvolvimento, o frontend se conecta diretamente ao backend usando o valor configurado em `VITE_API_BASE_URL`.
+

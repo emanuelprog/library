@@ -1,19 +1,19 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:${PG_PORT}/${POSTGRES_DB}
+    url: jdbc:postgresql://localhost:15432/${POSTGRES_DB}
     username: ${APP_DB_USER}
     password: ${APP_DB_PASSWORD}
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate.default_schema: library
       hibernate.format_sql: true
       hibernate.jdbc.time_zone: UTC
       hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
-  jackson:
-    serialization:
-      WRITE_DATES_AS_TIMESTAMPS: false
+
+jwt:
+  secret-key: ${JWT_SECRET_KEY}
 
 server:
   port: ${SERVER_PORT:8080}
