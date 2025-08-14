@@ -41,6 +41,8 @@ services:
     env_file: ./library-backend/.env.docker
     ports:
       - "8080:8080"
+    volumes:
+      - ~/.m2:/root/.m2   # <-- Cache local do Maven
     networks:
       - library_net
 
