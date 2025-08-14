@@ -11,6 +11,12 @@
         </div>
         <q-menu>
           <q-list style="min-width: 200px; max-width: 300px">
+            <q-item exact class="q-dark-fix">
+              <q-item-section>
+                <div class="text-weight-medium">{{ userStore.selectedUser?.username }}</div>
+              </q-item-section>
+            </q-item>
+            <q-separator />
             <q-item clickable @click="showConfigModal = true" exact class="q-dark-fix">
               <q-item-section avatar><q-icon name="settings" /></q-item-section>
               <q-item-section>Configurações</q-item-section>

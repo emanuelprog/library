@@ -10,7 +10,8 @@
           </template>
         </q-input>
 
-        <q-btn label="Novo" color="primary" icon="add" @click="openForm" />
+        <q-btn v-if="userStore.selectedUser?.role === 'ROLE_WRITER'" label="Novo" color="primary" icon="add"
+          @click="openForm" />
       </div>
 
       <q-card class="q-mt-md" style="width: 100%; max-width: 1200px">
@@ -67,6 +68,9 @@
 import { onMounted } from 'vue';
 import { useBookPage } from './BookPage';
 import './BookPage.scss';
+import { useUserStore } from 'src/stores/userStore';
+
+const userStore = useUserStore();
 
 const {
   form,
