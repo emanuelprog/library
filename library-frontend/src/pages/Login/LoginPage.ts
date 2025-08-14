@@ -13,7 +13,6 @@ export function useLoginPage() {
   const showPassword = ref(false);
   const isRegistering = ref(false);
 
-
   const userStore = useUserStore();
   const router = useRouter();
 
