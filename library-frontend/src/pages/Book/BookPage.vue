@@ -18,7 +18,7 @@
         <q-table :rows="items" :columns="columns" row-key="id" separator="horizontal" flat bordered
           :table-class="$q.dark.isActive ? 'table-dark' : 'table-light'" :rows-per-page-options="[0]"
           v-model:pagination="pagination" v-model:filter="filter" :filter-method="customFilterMethod">
-          <template v-slot:body-cell-actions="props">
+          <template v-slot:body-cell-actions="props" v-if="userStore.selectedUser?.role === 'ROLE_WRITER'">
             <q-td align="right">
               <q-btn icon="edit" flat dense round color="primary"
                 @click="selectItemWithDialog(props.row, props.rowIndex)" />
