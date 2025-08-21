@@ -1,9 +1,10 @@
-FROM node:20 AS build
+FROM node:20-alpine AS build
 WORKDIR /app
 
 COPY . .
 
 RUN npm install
+RUN npx vitest run
 RUN npm run build
 
 FROM nginx:1.27-alpine
